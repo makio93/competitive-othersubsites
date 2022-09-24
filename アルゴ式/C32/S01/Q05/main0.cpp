@@ -3,18 +3,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const vector<char> tar = { 'a', 'i', 'u', 'e', 'o', 'A', 'I', 'U', 'E', 'O' };
-
 int main() {
-    string s;
-    cin >> s;
-    for (char& ci : s) {
-        if (find(tar.begin(), tar.end(), ci) != tar.end()) {
-            if (isupper(ci)) ci = '#';
-            else ci = '?';
-        }
-        else if (isupper(ci)) ci = '!';
+    int res = 0;
+    for (int i=0; i<30; ++i) {
+        int h1, m1, h2, m2;
+        cin >> h1 >> m1 >> h2 >> m2;
+        int nval = (h2 * 60 + m2) - (h1 * 60 + m1);
+        if (nval > 8 * 60) nval -= 60;
+        else if (nval > 6 * 60) nval -= 45;
+        res += nval;
     }
-    cout << s << endl;
+    cout << (res/60) << ' ' << (res%60) << endl;
 	return 0;
 }
