@@ -1,4 +1,4 @@
-// 
+// 自力AC
 
 #include <iostream>
 using namespace std;
