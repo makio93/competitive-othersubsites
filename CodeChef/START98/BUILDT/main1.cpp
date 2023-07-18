@@ -1,4 +1,4 @@
-// 解説,WA
+// 解説AC
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -75,7 +75,7 @@ int main() {
             asum[vi] += a[vi];
             for (const int& ti : g[vi]) if (ti != pi) {
                 dfs0(ti, vi);
-                asum[vi] += a[ti];
+                asum[vi] += asum[ti];
                 chs[vi]++;
             }
         };
